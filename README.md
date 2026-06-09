@@ -1,84 +1,87 @@
-# B&T Bargains — The Bargain Barn 🌾
+# B&T Bargains — Website
 
-A simple, rustic, agriculture‑themed website for **B&T Bargains** in Loudon, Tennessee —
-a family‑run bargain store offering overstock, closeouts and store returns at near half the
+A professional, editorial website for **B&T Bargains** in Loudon, Tennessee — a family‑owned
+store offering quality **overstock, closeout and store‑return** merchandise at near half the
 big‑box price.
 
-The site is intentionally **minimal and rustic**, with **3D animations throughout** that keep
-the farm/ag theme: a low‑poly floating farm island in the hero (spinning windmill, barn, silo,
-drifting clouds, a warm sun and orbiting produce), CSS‑3D spinning aisle icons, a rotating
-produce crate, floating "how to shop" badges and reveal‑on‑scroll sections.
+The design is intentionally **clean, rustic and understated**: a muted agricultural palette,
+serif/sans editorial typography, generous whitespace, and **restrained motion**. The one
+3D moment is a **cinematic, realistic wheat‑field hero** rendered in three.js — thousands of
+wind‑swept stalks at golden hour with atmospheric haze, a low sun and drifting pollen — graded
+to read like footage rather than an illustration.
 
-## ✨ What's inside
+## Sections
 
-| Section | What it does |
+| Section | Notes |
 |---|---|
-| **Hero** | three.js low‑poly floating farm island with windmill, barn, silo, clouds, sun & orbiting produce. Mouse‑parallax camera. |
-| **Rope marquee** | Scrolling "new deals daily / overstock / ½ big‑box prices" ticker. |
-| **Featured Bargains** | Deal cards with discount badges, before/after prices and a 3D tilt on hover. |
-| **Aisles** | Department cards (Feed & Seed, Tools, Farm & Garden, Pantry, Home & Kitchen, Closeout Corner) with continuously spinning 3D icons. |
-| **How to Shop** | In‑store / pick‑up / local delivery / nationwide shipping, with floating 3D number badges. |
-| **Our Story** | Brand story beside a CSS‑3D rotating produce crate. |
-| **Where to Find Us** | Address, hours, phone, directions and social links. |
+| **Hero** | three.js wheat field (wind‑swayed instanced stalks, haze, sun, pollen) + cinematic grade/vignette/grain. Graded CSS golden‑hour sky as the fallback. |
+| **Value strip** | Three quick value props with thin‑line icons. |
+| **Featured Deals** | Catalog‑style cards with photo slots, savings tag and before/after pricing. |
+| **Departments** | Six departments in a hairline grid with thin‑line icons. |
+| **How to Shop** | In‑store / reserve for pickup / local delivery / nationwide shipping. |
+| **About** | Brand story beside an editorial line‑art barn illustration. |
+| **Visit** | Address, hours, phone and socials. |
 
-## 🧱 Tech
+## Tech
 
-- **Plain HTML + CSS + JavaScript** — no build step, no dependencies to install.
-- **[three.js](https://threejs.org/) r161** loaded via an ES‑module **import map** from a CDN
-  (only used by the hero scene).
-- Google Fonts: **Rye** (rustic wordmark), **Bitter** (slab‑serif headings), **Work Sans** (body).
+- **Plain HTML + CSS + JavaScript** — no build step, no install.
+- **[three.js](https://threejs.org/) r161** via an ES‑module **import map** from a CDN (hero only).
+- Fonts: **Fraunces** (display serif) + **Inter** (body), via Google Fonts.
+- Thin‑line iconography is an inline SVG `<symbol>` sprite — no icon dependency.
 
-### Graceful & accessible
-- If WebGL is unavailable, the hero falls back to a static SVG barn illustration.
-- Honors `prefers-reduced-motion` (animations stop / render a single still frame).
-- The 3D scene pauses when off‑screen or the tab is hidden, caps device pixel ratio, and
-  disables shadows on small screens to stay light.
-- Mobile hamburger nav, semantic landmarks, alt/aria labels.
+### Accessible & robust
+- If WebGL is unavailable, the hero shows a graded golden‑hour CSS sky (no broken state).
+- Honors `prefers-reduced-motion` (renders a single still frame, no wind/drift).
+- The 3D scene pauses off‑screen / when the tab is hidden, caps device pixel ratio, and
+  reduces stalk density on small screens.
+- Semantic landmarks, `<noscript>` keeps content visible, mobile hamburger nav.
 
-## ▶️ Run it locally
+## Add your photos
 
-ES‑module imports need to be served over `http://` (not opened as a `file://` path), so use any
-static server:
+The deal cards and (optionally) other sections use **photo slots** with a tasteful textured
+fallback that reads as intentional until you add real images. Drop store/product photos into
+`assets/` and replace a slot's background, e.g.:
 
-```bash
-# Python (built in)
-python3 -m http.server 8000
-
-# …or Node
-npx serve .
+```html
+<!-- in a .deal-photo -->
+<img src="assets/garden-tool-set.jpg" alt="Stainless garden tool set" />
 ```
 
-Then open <http://localhost:8000>.
+Using the store's **own** photos of real products and the storefront is the most professional
+result — far better than generic stock imagery.
 
-## 🚀 Deploy
+## Run locally
 
-It's a static site — host the repo root anywhere:
+ES modules must be served over `http://` (not opened as a `file://` path):
 
-- **GitHub Pages:** Settings → Pages → deploy from `main` (root). `index.html` is at the root.
-- **Netlify / Vercel / Cloudflare Pages:** no build command, publish directory = repo root.
+```bash
+python3 -m http.server 8000   # then open http://localhost:8000
+# or: npx serve .
+```
 
-## 🎨 Make it yours
+## Deploy
 
-Everything lives in plain files so it's easy to edit:
+Static site — host the repo root anywhere:
+- **GitHub Pages:** Settings → Pages → deploy from `main` (root).
+- **Netlify / Vercel / Cloudflare Pages:** no build command; publish directory = repo root.
 
-- **Colors & fonts:** CSS custom properties at the top of [`css/style.css`](css/style.css) (`:root`).
-- **Copy, deals & aisles:** edit the markup in [`index.html`](index.html).
-- **Real photos:** the visuals are hand‑built SVG/3D so the site stays fast and license‑free.
-  To use real store photos, drop them in `assets/` and swap the SVG art in the deal/aisle cards.
-- **The 3D farm:** tweak objects, colors and animation speeds in
-  [`js/hero3d.js`](js/hero3d.js).
+## Customize
 
-> **Note on details:** The address `1038 Mulberry St, Loudon, TN 37774` and phone
-> `(865) 390-1202` come from the store's public listings. The **store hours in the “Find Us”
-> section are sample placeholders** — update them in `index.html` to match the real schedule.
+- **Colors & type:** CSS custom properties at the top of [`css/style.css`](css/style.css) (`:root`).
+- **Copy, deals, departments:** edit the markup in [`index.html`](index.html).
+- **The wheat field:** tune density, colors, wind and camera in [`js/hero3d.js`](js/hero3d.js).
 
-## 📁 Structure
+> **Details:** Address `1038 Mulberry St, Loudon, TN 37774` and phone `(865) 390-1202` are
+> from the store's public listings. The **hours in “Visit the Store” are sample placeholders** —
+> update them in `index.html` to match the real schedule.
+
+## Structure
 
 ```
 .
-├── index.html          # all page content / sections
-├── css/style.css       # rustic minimal theme + CSS‑3D animations
-├── js/hero3d.js        # three.js floating farm hero scene
-├── js/main.js          # nav, scroll‑reveal, card tilt
+├── index.html          # content + icon sprite
+├── css/style.css       # editorial theme
+├── js/hero3d.js        # three.js wheat-field hero
+├── js/main.js          # nav, scroll-reveal
 └── assets/             # favicon + social image (SVG)
 ```
