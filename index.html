@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B&amp;T Bargains — The Bargain Barn | Loudon, TN</title>
+  <meta name="description" content="B&T Bargains is a family-run bargain barn in Loudon, Tennessee. Overstock, closeouts & store returns at near half the big-box price. Shop in-store, buy now & pick up later, local delivery and nationwide shipping." />
+  <meta name="theme-color" content="#9b3322" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="B&T Bargains — The Bargain Barn" />
+  <meta property="og:description" content="Down-home deals on overstock, closeouts & farm-fresh finds in Loudon, Tennessee." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-image.svg" />
+
+  <!-- Fonts: Rye (rustic wordmark), Bitter (slab-serif headings), Work Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;0,800;1,500&family=Rye&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- If JS is off, don't keep scroll-reveal content hidden -->
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+
+  <!-- Three.js via import map (no build step) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.161.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="site-header" id="top">
+    <div class="wrap nav-wrap">
+      <a class="brand" href="#top" aria-label="B&T Bargains home">
+        <span class="brand-mark" aria-hidden="true">
+          <!-- little barn glyph -->
+          <svg viewBox="0 0 48 48" width="38" height="38" role="img" aria-hidden="true">
+            <path d="M24 4 6 14v30h36V14L24 4z" fill="#9b3322"/>
+            <path d="M24 4 6 14h36L24 4z" fill="#7a2618"/>
+            <rect x="20" y="26" width="8" height="18" fill="#f6efe1"/>
+            <path d="M24 14l-9 5v6h18v-6l-9-5z" fill="#f6efe1" opacity=".9"/>
+            <path d="M24 17l-5 3h10l-5-3z" fill="#9b3322"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">B&amp;T Bargains</span>
+          <span class="brand-tag">The Bargain Barn · Loudon, TN</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">
+          <span></span><span></span><span></span>
+          <span class="sr-only">Menu</span>
+        </button>
+        <ul class="nav-list" id="navList">
+          <li><a href="#deals">Deals</a></li>
+          <li><a href="#aisles">Aisles</a></li>
+          <li><a href="#how">How to Shop</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a class="nav-cta" href="#find">Find Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <!-- 3D farm scene mounts here; SVG fallback shows underneath if WebGL fails -->
+    <div class="hero-3d" id="hero3d" aria-hidden="true">
+      <div class="hero-3d-fallback" id="hero3dFallback">
+        <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a red barn on a green hill under a warm sky">
+          <rect width="600" height="400" fill="#f3d99b"/>
+          <circle cx="470" cy="110" r="55" fill="#f4c45a"/>
+          <path d="M0 290 Q150 250 300 285 T600 280V400H0z" fill="#7a8c4a"/>
+          <path d="M0 320 Q200 295 400 320 T600 315V400H0z" fill="#5c6b3a"/>
+          <g transform="translate(180 200)">
+            <path d="M0 40 60 10 120 40v90H0z" fill="#9b3322"/>
+            <path d="M0 40 60 10 120 40H0z" fill="#7a2618"/>
+            <rect x="48" y="80" width="24" height="50" fill="#f6efe1"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="wrap hero-content">
+      <p class="hero-kicker reveal">Family-run since the first good deal</p>
+      <h1 class="hero-title reveal">
+        Down-home deals,<br /><span class="ink-gold">straight from the barn.</span>
+      </h1>
+      <p class="hero-sub reveal">
+        Overstock, closeouts &amp; store returns at near <strong>half the big-box price</strong> —
+        right here in Loudon County, Tennessee.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#deals" class="btn btn-primary">Shop the Barn</a>
+        <a href="#find" class="btn btn-ghost">Find Us &rsaquo;</a>
+      </div>
+
+      <ul class="hero-stats reveal" aria-label="Why folks shop with us">
+        <li><span class="stat-num">½</span><span class="stat-lbl">the big-box price</span></li>
+        <li><span class="stat-num">New</span><span class="stat-lbl">deals daily</span></li>
+        <li><span class="stat-num">Local</span><span class="stat-lbl">pickup &amp; delivery</span></li>
+      </ul>
+    </div>
+
+    <a href="#deals" class="scroll-cue" aria-label="Scroll to deals">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ===================== ROPE MARQUEE ===================== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>New Deals Daily</span><span class="dot">✦</span>
+      <span>Overstock &amp; Closeouts</span><span class="dot">✦</span>
+      <span>Near ½ Big-Box Prices</span><span class="dot">✦</span>
+      <span>Store Returns</span><span class="dot">✦</span>
+      <span>Local Delivery</span><span class="dot">✦</span>
+      <span>New Deals Daily</span><span class="dot">✦</span>
+      <span>Overstock &amp; Closeouts</span><span class="dot">✦</span>
+      <span>Near ½ Big-Box Prices</span><span class="dot">✦</span>
+      <span>Store Returns</span><span class="dot">✦</span>
+      <span>Local Delivery</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ===================== FEATURED DEALS ===================== -->
+  <section class="section deals" id="deals">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">This Week at the Barn</p>
+        <h2 class="section-title">Featured Bargains</h2>
+        <p class="section-lead">
+          A fresh haul comes in every week. Here's a taste of what's on the shelves —
+          quantities are limited, so come on by while the gettin's good.
+        </p>
+      </header>
+
+      <div class="deal-grid">
+        <!-- Card 1 -->
+        <article class="deal-card reveal" data-tilt>
+          <div class="deal-media">
+            <span class="deal-badge">-52%</span>
+            <div class="deal-art art-seed" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <rect x="30" y="44" width="60" height="56" rx="6" fill="#b67f25"/>
+                <rect x="30" y="44" width="60" height="14" fill="#d39a3a"/>
+                <path d="M44 44c0-10 6-18 16-18s16 8 16 18z" fill="#7a8c4a"/>
+                <circle cx="52" cy="74" r="4" fill="#3a2c20"/>
+                <circle cx="68" cy="84" r="4" fill="#3a2c20"/>
+                <circle cx="60" cy="66" r="4" fill="#3a2c20"/>
+              </svg>
+            </div>
+          </div>
+          <div class="deal-body">
+            <p class="deal-cat">Feed &amp; Seed</p>
+            <h3 class="deal-name">Garden Starter Seed Pack</h3>
+            <p class="deal-price"><span class="now">$3.49</span><span class="was">$7.29</span></p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="deal-card reveal" data-tilt>
+          <div class="deal-media">
+            <span class="deal-badge">-45%</span>
+            <div class="deal-art art-tools" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <rect x="54" y="30" width="12" height="60" rx="3" fill="#5b4636"/>
+                <path d="M40 28h40l-6 16H46z" fill="#9aa0a6"/>
+                <path d="M40 28h40l-2 6H42z" fill="#cdd2d6"/>
+                <rect x="50" y="86" width="20" height="8" rx="2" fill="#3a2c20"/>
+              </svg>
+            </div>
+          </div>
+          <div class="deal-body">
+            <p class="deal-cat">Tools &amp; Hardware</p>
+            <h3 class="deal-name">Heavy-Duty Garden Hoe</h3>
+            <p class="deal-price"><span class="now">$11.00</span><span class="was">$19.99</span></p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="deal-card reveal" data-tilt>
+          <div class="deal-media">
+            <span class="deal-badge">-60%</span>
+            <div class="deal-art art-can" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <rect x="42" y="36" width="36" height="52" rx="4" fill="#c0492f"/>
+                <rect x="42" y="36" width="36" height="52" rx="4" fill="url(#g1)" opacity=".25"/>
+                <rect x="42" y="50" width="36" height="22" fill="#f6efe1"/>
+                <text x="60" y="66" text-anchor="middle" font-family="Bitter, serif" font-size="11" fill="#9b3322" font-weight="700">FARM</text>
+                <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient></defs>
+              </svg>
+            </div>
+          </div>
+          <div class="deal-body">
+            <p class="deal-cat">Pantry &amp; Groceries</p>
+            <h3 class="deal-name">Country Canned Goods (4-pk)</h3>
+            <p class="deal-price"><span class="now">$4.00</span><span class="was">$9.96</span></p>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="deal-card reveal" data-tilt>
+          <div class="deal-media">
+            <span class="deal-badge">-48%</span>
+            <div class="deal-art art-boot" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <path d="M46 30h16v40l20 6c6 2 8 6 8 12v6H40V30z" fill="#5b4636"/>
+                <path d="M40 88h50v8H38c-1-4 0-8 2-8z" fill="#3a2c20"/>
+                <path d="M46 30h16v10H46z" fill="#7a5a44"/>
+              </svg>
+            </div>
+          </div>
+          <div class="deal-body">
+            <p class="deal-cat">Farm &amp; Work</p>
+            <h3 class="deal-name">Rugged Work Boots</h3>
+            <p class="deal-price"><span class="now">$24.00</span><span class="was">$45.99</span></p>
+          </div>
+        </article>
+      </div>
+
+      <p class="deals-note reveal">
+        <span class="note-star">✦</span> Stock changes constantly — follow along on
+        <a href="https://www.facebook.com/BandTBargains/" target="_blank" rel="noopener">Facebook</a> and
+        <a href="https://www.instagram.com/bntbargains/" target="_blank" rel="noopener">Instagram</a>
+        for the latest hauls.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== AISLES / DEPARTMENTS ===================== -->
+  <section class="section aisles" id="aisles">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">Wander the Aisles</p>
+        <h2 class="section-title">A Little Bit of Everything</h2>
+        <p class="section-lead">
+          From the field to the front porch — our barn is stocked with honest goods across every aisle.
+        </p>
+      </header>
+
+      <div class="aisle-grid">
+        <article class="aisle-card reveal">
+          <div class="aisle-icon spin-3d" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M32 6c8 6 12 16 12 30 0 12-5 22-12 22S20 48 20 36 24 12 32 6z" fill="#d39a3a"/><path d="M32 6c0 18 0 34 0 52" stroke="#b67f25" stroke-width="2"/><path d="M32 18c-5 2-9 6-9 6m9-1c5 2 9 6 9 6m-9 1c-5 2-9 6-9 6m9-1c5 2 9 6 9 6" stroke="#b67f25" stroke-width="2" fill="none"/></svg>
+          </div>
+          <h3>Feed &amp; Seed</h3>
+          <p>Garden seeds, pet &amp; livestock feed, soil and starts for the growing season.</p>
+        </article>
+
+        <article class="aisle-card reveal">
+          <div class="aisle-icon spin-3d" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><rect x="28" y="14" width="8" height="36" rx="2" fill="#5b4636"/><path d="M18 12h28l-4 12H22z" fill="#9aa0a6"/><path d="M18 12h28l-2 5H20z" fill="#cdd2d6"/></svg>
+          </div>
+          <h3>Tools &amp; Hardware</h3>
+          <p>Hand tools, fasteners, tarps, twine and all the fix-it fixings.</p>
+        </article>
+
+        <article class="aisle-card reveal">
+          <div class="aisle-icon spin-3d" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M20 26h24l-3 26H23z" fill="#7a8c4a"/><path d="M20 26h24l-1 8H21z" fill="#9aae5e"/><path d="M24 26c0-7 4-12 8-12s8 5 8 12" fill="none" stroke="#5c6b3a" stroke-width="3"/></svg>
+          </div>
+          <h3>Farm &amp; Garden</h3>
+          <p>Planters, watering cans, fencing, gloves and outdoor must-haves.</p>
+        </article>
+
+        <article class="aisle-card reveal">
+          <div class="aisle-icon spin-3d" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><rect x="22" y="18" width="20" height="30" rx="3" fill="#c0492f"/><rect x="22" y="26" width="20" height="12" fill="#f6efe1"/><circle cx="32" cy="32" r="3" fill="#9b3322"/></svg>
+          </div>
+          <h3>Pantry &amp; Groceries</h3>
+          <p>Canned goods, snacks, dry goods and everyday staples at a steal.</p>
+        </article>
+
+        <article class="aisle-card reveal">
+          <div class="aisle-icon spin-3d" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M16 40h32v8H16z" fill="#5b4636"/><path d="M20 24h24v16H20z" fill="#7a5a44"/><path d="M24 24v16M32 24v16M40 24v16" stroke="#5b4636" stroke-width="2"/><circle cx="32" cy="18" r="6" fill="#d39a3a"/></svg>
+          </div>
+          <h3>Home &amp; Kitchen</h3>
+          <p>Cookware, storage, cleaning supplies and rustic decor for the homestead.</p>
+        </article>
+
+        <article class="aisle-card reveal">
+          <div class="aisle-icon spin-3d" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M14 30 32 16l18 14v4l-18-12-18 12z" fill="#9b3322"/><rect x="20" y="32" width="24" height="18" fill="#b8442f"/><rect x="28" y="38" width="8" height="12" fill="#f6efe1"/></svg>
+          </div>
+          <h3>Closeout Corner</h3>
+          <p>The deepest cuts in the barn — last-chance overstock and store returns.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW TO SHOP ===================== -->
+  <section class="section how" id="how">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">Four Easy Ways</p>
+        <h2 class="section-title">How to Shop With Us</h2>
+        <p class="section-lead">However you like to shop, we'll get the goods to you.</p>
+      </header>
+
+      <div class="how-grid">
+        <article class="how-card reveal">
+          <div class="how-num float-3d">1</div>
+          <h3>Shop In-Store</h3>
+          <p>Come wander the barn at 1038 Mulberry St. Half the fun is the hunt.</p>
+        </article>
+        <article class="how-card reveal">
+          <div class="how-num float-3d">2</div>
+          <h3>Buy Now, Pick Up Later</h3>
+          <p>Spot something online? Reserve it and grab it on your schedule.</p>
+        </article>
+        <article class="how-card reveal">
+          <div class="how-num float-3d">3</div>
+          <h3>Local Delivery</h3>
+          <p>Live around Loudon? We'll bring your haul right to the door.</p>
+        </article>
+        <article class="how-card reveal">
+          <div class="how-num float-3d">4</div>
+          <h3>Nationwide Shipping</h3>
+          <p>Not from around here? Plenty of our deals ship anywhere in the U.S.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OUR STORY ===================== -->
+  <section class="section story" id="story">
+    <div class="wrap story-wrap">
+      <div class="story-art reveal" aria-hidden="true">
+        <!-- 3D-styled rotating crate of produce -->
+        <div class="crate-scene">
+          <div class="crate">
+            <div class="crate-face f-front"></div>
+            <div class="crate-face f-back"></div>
+            <div class="crate-face f-right"></div>
+            <div class="crate-face f-left"></div>
+            <div class="crate-face f-top"></div>
+            <div class="crate-face f-bottom"></div>
+            <div class="crate-produce p1"></div>
+            <div class="crate-produce p2"></div>
+            <div class="crate-produce p3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-text reveal">
+        <p class="eyebrow">Our Story</p>
+        <h2 class="section-title">From Our Barn to Your Home</h2>
+        <p>
+          B&amp;T Bargains started with a simple idea: good folks shouldn't have to pay
+          big-box prices for everyday goods. So we opened the barn doors in
+          <strong>Loudon, Tennessee</strong> and started filling the shelves with
+          overstock, closeouts and store returns — all at near half the price.
+        </p>
+        <p>
+          Every week brings a brand-new haul, so no two visits are ever the same.
+          It's part bargain hunt, part treasure hunt — and it's all about taking
+          care of our neighbors in Loudon County.
+        </p>
+        <ul class="story-points">
+          <li><span aria-hidden="true">✦</span> Family-owned &amp; locally run</li>
+          <li><span aria-hidden="true">✦</span> Fresh deals every single week</li>
+          <li><span aria-hidden="true">✦</span> Honest prices, friendly faces</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FIND US ===================== -->
+  <section class="section find" id="find">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">Come On By</p>
+        <h2 class="section-title">Where to Find Us</h2>
+      </header>
+
+      <div class="find-grid">
+        <div class="find-card reveal">
+          <h3>The Barn</h3>
+          <address>
+            1038 Mulberry St<br />
+            Loudon, TN 37774
+          </address>
+          <p class="find-line">
+            <a href="tel:+18653901202">(865) 390-1202</a>
+          </p>
+          <a class="btn btn-primary btn-sm" href="https://maps.google.com/?q=1038+Mulberry+St,+Loudon,+TN+37774" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+
+        <div class="find-card reveal">
+          <h3>Barn Hours</h3>
+          <!-- NOTE: sample hours — update these to match the store's actual schedule. -->
+          <ul class="hours">
+            <li><span>Mon – Fri</span><span>9:00a – 6:00p</span></li>
+            <li><span>Saturday</span><span>9:00a – 5:00p</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+          </ul>
+          <p class="hours-note">Holiday hours may vary — give us a call ahead.</p>
+        </div>
+
+        <div class="find-card find-social reveal">
+          <h3>Say Howdy</h3>
+          <p>Follow the barn for fresh deals as they hit the shelves.</p>
+          <div class="social-row">
+            <a href="https://www.facebook.com/BandTBargains/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+            <a href="https://www.instagram.com/bntbargains/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/bntbargains" target="_blank" rel="noopener" aria-label="X">X</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="wrap footer-wrap">
+      <div class="footer-brand">
+        <span class="brand-name">B&amp;T Bargains</span>
+        <p>The Bargain Barn — Loudon, Tennessee.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#deals">Deals</a>
+        <a href="#aisles">Aisles</a>
+        <a href="#how">How to Shop</a>
+        <a href="#story">Our Story</a>
+        <a href="#find">Find Us</a>
+      </nav>
+      <p class="footer-fine">
+        © <span id="year">2026</span> B&amp;T Bargains · 1038 Mulberry St, Loudon, TN 37774 · (865) 390-1202
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/hero3d.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
