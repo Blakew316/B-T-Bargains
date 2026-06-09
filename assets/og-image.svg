@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2dea2"/>
+      <stop offset="0.5" stop-color="#e9c07a"/>
+      <stop offset="1" stop-color="#cf8f4e"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cf8f4e" stop-opacity="0"/>
+      <stop offset="1" stop-color="#4a3a1c" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <circle cx="430" cy="250" r="64" fill="#fff3d2" opacity="0.85"/>
+  <circle cx="430" cy="250" r="130" fill="#ffe6ad" opacity="0.3"/>
+  <!-- wheat silhouette band -->
+  <g stroke="#7a5f2c" stroke-width="3" stroke-linecap="round" opacity="0.55">
+    <path d="M120 630V470M120 470c0-30 18-46 18-46M120 470c0-30-18-46-18-46"/>
+    <path d="M260 630V450M260 450c0-30 18-46 18-46M260 450c0-30-18-46-18-46"/>
+    <path d="M1080 630V470M1080 470c0-30 18-46 18-46M1080 470c0-30-18-46-18-46"/>
+    <path d="M940 630V450M940 450c0-30 18-46 18-46M940 450c0-30-18-46-18-46"/>
+  </g>
+  <rect y="380" width="1200" height="250" fill="url(#fade)"/>
+  <text x="600" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="84" font-weight="500" fill="#fffaf0">B&amp;T Bargains</text>
+  <text x="600" y="356" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="26" letter-spacing="3" fill="#fff3df">OVERSTOCK · CLOSEOUT · LOUDON, TENNESSEE</text>
+</svg>
