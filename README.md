@@ -26,16 +26,39 @@ golden‑hour hero, serif/sans editorial typography and clean thin‑line icons.
 - Icons are an inline SVG `<symbol>` sprite — no icon library.
 - Semantic landmarks, mobile hamburger nav, accessible labels.
 
-## Add your own photos (recommended)
+## Products
 
-The site ships text‑and‑texture clean so nothing looks broken, but it's built to show **your
-real store and product photos** — that's what makes a shop's site feel real. To add them:
+The **Shop the Store** grid lists real B&T Bargains products (Tide, Gain, Dawn, Downy,
+Snuggle, All Free & Clear, scent beads, Amish bar soap, Stout cleaner, …), and each card
+links to that item's live page on `bntbargains.com`.
 
-- **Hero:** drop a storefront/field photo in `assets/` and put an `<img>` inside `.hero-photo`
-  (or set it as the `background-image` of `.hero-photo` in the CSS).
-- **Deals:** add a product photo to each `.deal-card` (e.g. an `<img>` above `.deal-cat`).
+### Add the product photos
 
-Using the store's own photography looks far more professional than generic stock imagery.
+Every card already points at a photo path and shows a clean name label until the file
+exists — so **just drop the images in and they appear** (no code change, never a broken
+icon). Add JP/PNG files here, matching the `src` in `index.html`:
+
+```
+assets/products/tide-1gal.jpg
+assets/products/gain-1gal.jpg
+assets/products/gain-5gal.jpg
+assets/products/all-free-1gal.jpg
+assets/products/downy-1gal.jpg
+assets/products/snuggle-1gal.jpg
+assets/products/pink-beads.jpg
+assets/products/rainbow-beads.jpg
+assets/products/dawn-1gal.jpg
+assets/products/stout-1gal.jpg
+assets/products/all-free-5gal.jpg
+assets/products/amish-soap.jpg
+```
+
+Square images (roughly 800×800) look best. For the **hero**, drop a storefront photo in
+`assets/` and set it as the `background-image` of `.hero-photo` in the CSS.
+
+> **Why aren't the photos already here?** This site was built in a sandbox that blocks every
+> outside image host, so the product photos couldn't be downloaded automatically. The grid is
+> wired so adding them is a one‑step drop‑in.
 
 ## Run locally
 
