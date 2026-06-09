@@ -1,63 +1,50 @@
 # B&T Bargains — Website
 
-A professional, editorial website for **B&T Bargains** in Loudon, Tennessee — a family‑owned
-store offering quality **overstock, closeout and store‑return** merchandise at near half the
-big‑box price.
+A **static, rustic, professional** website for **B&T Bargains** in Loudon, Tennessee — a
+family‑owned store offering quality **overstock, closeout and store‑return** merchandise at
+near half the big‑box price.
 
-The design is intentionally **clean, rustic and understated**: a muted agricultural palette,
-serif/sans editorial typography, generous whitespace, and **restrained motion**. The one
-3D moment is a **cinematic, realistic wheat‑field hero** rendered in three.js — thousands of
-wind‑swept stalks at golden hour with atmospheric haze, a low sun and drifting pollen — graded
-to read like footage rather than an illustration.
+The design is calm and real: a warm heritage palette with a subtle paper texture, a graded
+golden‑hour hero, serif/sans editorial typography and clean thin‑line icons. **There are no
+3D scenes and no animations** — nothing moves on the page.
 
 ## Sections
 
-| Section | Notes |
-|---|---|
-| **Hero** | three.js wheat field (wind‑swayed instanced stalks, haze, sun, pollen) + cinematic grade/vignette/grain. Graded CSS golden‑hour sky as the fallback. |
-| **Value strip** | Three quick value props with thin‑line icons. |
-| **Featured Deals** | Catalog‑style cards with photo slots, savings tag and before/after pricing. |
-| **Departments** | Six departments in a hairline grid with thin‑line icons. |
-| **How to Shop** | In‑store / reserve for pickup / local delivery / nationwide shipping. |
-| **About** | Brand story beside an editorial line‑art barn illustration. |
-| **Visit** | Address, hours, phone and socials. |
+- **Hero** — graded golden‑hour backdrop with the headline and calls to action.
+- **Value strip** — three reasons to shop (near ½ prices, fresh stock weekly, pickup & delivery).
+- **Featured Deals** — typographic catalog cards with before/after pricing and a savings tag.
+- **Departments** — six departments in a tidy hairline grid with thin‑line icons.
+- **How to Shop** — in‑store / reserve for pickup / local delivery / nationwide shipping.
+- **About** — the store's story beside a short “facts” card.
+- **Visit** — address, hours, phone and socials.
 
 ## Tech
 
-- **Plain HTML + CSS + JavaScript** — no build step, no install.
-- **[three.js](https://threejs.org/) r161** via an ES‑module **import map** from a CDN (hero only).
-- Fonts: **Fraunces** (display serif) + **Inter** (body), via Google Fonts.
-- Thin‑line iconography is an inline SVG `<symbol>` sprite — no icon dependency.
+- **Plain HTML + CSS + a few lines of JS.** No build step, no framework, no dependencies.
+- The only JavaScript runs the mobile menu and the footer year.
+- Fonts: **Fraunces** (display serif) + **Inter** (body) via Google Fonts.
+- Icons are an inline SVG `<symbol>` sprite — no icon library.
+- Semantic landmarks, mobile hamburger nav, accessible labels.
 
-### Accessible & robust
-- If WebGL is unavailable, the hero shows a graded golden‑hour CSS sky (no broken state).
-- Honors `prefers-reduced-motion` (renders a single still frame, no wind/drift).
-- The 3D scene pauses off‑screen / when the tab is hidden, caps device pixel ratio, and
-  reduces stalk density on small screens.
-- Semantic landmarks, `<noscript>` keeps content visible, mobile hamburger nav.
+## Add your own photos (recommended)
 
-## Add your photos
+The site ships text‑and‑texture clean so nothing looks broken, but it's built to show **your
+real store and product photos** — that's what makes a shop's site feel real. To add them:
 
-The deal cards and (optionally) other sections use **photo slots** with a tasteful textured
-fallback that reads as intentional until you add real images. Drop store/product photos into
-`assets/` and replace a slot's background, e.g.:
+- **Hero:** drop a storefront/field photo in `assets/` and put an `<img>` inside `.hero-photo`
+  (or set it as the `background-image` of `.hero-photo` in the CSS).
+- **Deals:** add a product photo to each `.deal-card` (e.g. an `<img>` above `.deal-cat`).
 
-```html
-<!-- in a .deal-photo -->
-<img src="assets/garden-tool-set.jpg" alt="Stainless garden tool set" />
-```
-
-Using the store's **own** photos of real products and the storefront is the most professional
-result — far better than generic stock imagery.
+Using the store's own photography looks far more professional than generic stock imagery.
 
 ## Run locally
-
-ES modules must be served over `http://` (not opened as a `file://` path):
 
 ```bash
 python3 -m http.server 8000   # then open http://localhost:8000
 # or: npx serve .
 ```
+
+(It also works opened directly as a file, since there are no module imports.)
 
 ## Deploy
 
@@ -68,20 +55,18 @@ Static site — host the repo root anywhere:
 ## Customize
 
 - **Colors & type:** CSS custom properties at the top of [`css/style.css`](css/style.css) (`:root`).
-- **Copy, deals, departments:** edit the markup in [`index.html`](index.html).
-- **The wheat field:** tune density, colors, wind and camera in [`js/hero3d.js`](js/hero3d.js).
+- **Copy, deals, departments, hours:** edit [`index.html`](index.html).
 
-> **Details:** Address `1038 Mulberry St, Loudon, TN 37774` and phone `(865) 390-1202` are
-> from the store's public listings. The **hours in “Visit the Store” are sample placeholders** —
+> **Details:** Address `1038 Mulberry St, Loudon, TN 37774` and phone `(865) 390-1202` are from
+> the store's public listings. The **hours in “Visit the Store” are sample placeholders** —
 > update them in `index.html` to match the real schedule.
 
 ## Structure
 
 ```
 .
-├── index.html          # content + icon sprite
-├── css/style.css       # editorial theme
-├── js/hero3d.js        # three.js wheat-field hero
-├── js/main.js          # nav, scroll-reveal
-└── assets/             # favicon + social image (SVG)
+├── index.html       # all content + icon sprite
+├── css/style.css    # rustic static theme
+├── js/main.js       # mobile nav + year (no animation)
+└── assets/          # favicon + social image (SVG)
 ```
